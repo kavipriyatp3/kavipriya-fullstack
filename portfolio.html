@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>HARSHINI-RESUME</title>
+    
+    <style>
+       *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "poppins",sans-serif;
+       }
+       body{
+        height: 100vh;
+        background: url("./image/back2-img.avif") no-repeat center / cover;
+        padding: 50px 5%;
+        background-repeat: repeat;
+       }
+       .container{
+        position: relative;
+        height: 100%;
+        border-radius: 30px;
+
+       }
+       header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+       }
+       .logo{
+        font-size: 46px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 20px;
+        font-style: oblique;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+       }
+       .logo img{
+        width: 70px;
+        height: 70px;
+        border-radius: 55px;
+       }
+       .navbar a{
+        font-size: 25px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 35px;
+        /* border-bottom: 2px solid transparent;
+        transition: .5s; */
+       }
+       .navbar a:hover,
+       .navbar a:active{
+        border-color: #fff;
+       }
+       .home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        gap: 50px;
+        padding: 50px 5% 0;
+        color: #fff;
+       }
+       .home-detail h1 {
+        font-size: 55px;
+        line-height: 1;
+       }
+       .home-detail h2 {
+        font-size: 32px;
+       }
+       .home-detail.download-social {
+        display: flex;
+        align-items: center;
+       }
+       .button {
+        display: inline-block;
+        padding: 10px 30px;
+        background-color: #fff;
+        border-radius: 40px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 10px;
+        transition: .5s;
+       }
+       .button:hover {
+        background: transparent;
+        border: 2px solid white;
+        box-shadow: none;
+        color: #fff;
+       }
+       .icons {
+        margin-top: 15px;
+        display: flex;
+        gap: 15px;
+       }
+       .icons a {
+        color: #fff;
+        border-radius: 50%;
+        font-size: 22px;
+        text-decoration: none;
+        margin: 0 8px;
+        transition: .5s;
+       }
+       .icons a:hover {
+         background: #fff;
+         box-shadow: 0 0 10px #fff;
+         color: palevioletred;
+       }
+       .home-img{
+         width: 45%;
+         display: flex;
+         justify-content: center;
+       }
+       .img-box img{
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 20px;
+        object-fit: cover;
+       }
+       #about{
+        /* background: #fff; */
+        text-align: center;
+        padding: 100px 10%;
+        margin-bottom: 50px;
+       }
+       #about h2{
+        font-size: 32px;
+        /* color: #fff; */
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        position: relative;
+       }
+       #about h2::after{
+        content: '';
+        width: 60px;
+        height: 4px;
+        /* background: #00a8ff; */
+        display: block;
+        margin: 10px auto 0;
+        border-radius: 10px;
+       }
+       #about > p{
+        font-size: 18px;
+        color: gold;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+       }
+    .about-details {
+      background: white;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      text-align: left;
+}
+.about-details p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #4a0303;
+    padding-bottom: 8px;
+}
+.about-details p:last-child {
+    border-bottom: none;
+}
+.about-details strong {
+    color: #0a1931;
+    width: 110px;
+    display: inline-block;
+}
+#skills{
+    /* background: #0a1931; */
+    text-align: center;
+    padding: 100px 10%;
+    align-items: center;
+    
+}
+.skills h2{
+    font-size: 32px;
+    color: white;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+.skills-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+.skills-details p{
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: whitesmoke;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.skills-details p:hover{
+    background: plum;
+    color: #0a1931;
+}
+.education{
+    /* background: #f5f8ff; */
+    text-align: center;
+    padding: 80px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.education h2{
+    color: #0a1931;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+.education-details{
+    background: #fff;
+    padding: 25px 35px;
+    border-radius: 15px;
+    max-width: 500px;
+}
+.education-details p{
+    margin: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+#contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    position: relative;
+}
+.contact-top{
+   top: 20px;
+   display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: -40px;
+}
+.box{
+    background: #fff;
+    width: 260px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+.box h4{
+    font-size: 12px;
+    margin: 10px 0 5px;
+}
+.box p{
+    font-size: 12px;
+    color: #555;
+}
+.contact-form{
+    background: #8ed0e0;
+    margin-top: 60px;
+    width: 90%;
+    max-width: 500px;
+    padding: 50px 30px 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+.contact-form h2{
+    color: #0a1931;
+    margin-bottom: 20px;
+}
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: none;
+    outline: none;
+}
+.contact-form button{
+    background: transparent;
+    border: 1px solid #0a1931;
+    padding: 6px 20px;
+    cursor: pointer;
+}
+.contact-form button:hover{
+    background: #0a1931;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="./image/harshini-pic.png" alt="harsh">HARSHINI
+
+            </div>
+            <nav class="navbar">
+                <a href="#Home" class="active">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#education">EDUCATION</a>
+                <a href="#CONTACT">CONTACT</a>
+            </nav>
+        </header> 
+        <section class="home">
+            <div class="home-detail">
+                <h1>I AM HARSHINI</h1>
+                <h2>I am Website Developer</h2>
+                <div class="download">
+                    <a href="#" class="button">DOWNLOAD CV</a>
+                    <div class="icons">
+                         <a href="#"><i class="fa-brands fa-github"></i></a>
+                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>    
+                         <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                         <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="home-img">
+                <div class="img-box">
+                    <img src="./image/Harshini Pic.jpeg" alt="ha">
+
+                </div>
+            </div>
+        </section>
+        <section id="about" class="ABOUT">
+            <h2>ABOUT ME</h2>
+            <p>I am Harshini, a website developer from Madurai. I love creating beautiful websites.</p>
+
+            <div class="about-details">
+                <p><strong>DOB :</strong>03-04-2005</p>
+                <p><strong>Gender :</strong>Female</p>
+                <p><strong>Location</strong>Y.Kodikulam</p>
+
+            </div>
+        </section>
+        <section id="skills" class="SKILLS">
+            <h2>SKILLS</h2>
+            <div class="skills-details">
+            <p>COMMUNICATION SKILLS</p>
+            <p>MS OFFICE</p>
+            <p>HTML</p>
+            <p>CSS</p>
+            </div>
+        </section>
+        <section id="education" class="education">
+            <h2>EDUCATION</h2>
+            <div class="education-details">
+                <p>Bachelor of Arts B.SC.COMPUTER SCIENCE</p>
+                <p>Madurai Kamarajar University</p>
+                <p>PASSING: 2025</p>
+            </div>
+        </section>
+        <section id="CONTACT" class="contact">
+            <div class="contact-top">
+                <div class="box"><h4>LOCATION</h4><p>76/7d,vishal nagar,melur-625106</p></div>
+                <div class="box"><h4>PHONE NUMBER</h4><p>9344964714</p></div>
+                <div class="box"><h4>EMAIL</h4>kavipriyatp3@gmail.com</div>
+            </div>
+            <div class="contact-form" >
+                <h2>CONTACT US</h2>
+                <input type="text" placeholder="Enter your Name">
+                <input type="email" placeholder="Enter a valid email address">
+                <textarea rows="4"></textarea>
+                <button>SUMBIT</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
