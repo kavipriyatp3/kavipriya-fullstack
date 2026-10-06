@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 100%;
+            height: 10vh;
+            background-color: blue;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+
+        }
+        .logo{
+            width: 200%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            font-weight: 300;
+            margin-left: 40px;
+            color: antiquewhite;
+        }
+        .ul{
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 700px;
+            height: 100%;
+        }
+        .li{
+            margin-right: 80px;
+            align-items: center;
+            justify-content: center;
+            list-style-type: none;
+            padding: 5px15px;
+            font-size: 20px;
+        }
+        .link{
+            text-decoration: none;
+            color: antiquewhite;
+            position: relative;
+            display: flex;
+            gap: 30px;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+        }
+
+        .signin{
+            padding: 10px;
+            background-color: whitesmoke;
+            border: none;
+            border-radius: 3px;
+            color:black;
+            font-size: 20px;
+        }
+        .signup{
+            padding: 20px;
+            background-color: antiquewhite;
+            border: none;
+            border-radius: 3px;
+            color: black;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .content{
+            text-align: center;
+            margin-top: 250px;
+        }
+        
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        
+        <div class="logo">
+            NAVBAR
+        </div>
+        <ul class="ul" id="ul">
+            <li class="li"><a href="" class="link">Home</a></li>
+            <li class="li"><a href="" class="link">About</a></li>
+            <li class="li"><a href="" class="link">Blog</a></li>
+            <li class="li"><a href="" class="link">Contact</a></li>
+
+            <button class="signin">sign in</button>
+            <button class="signup">signup</button>
+        </ul>
+
+        
+    </nav>
+    <div class="content">
+        <h1> NAVIGATION BAR</h1>
+        <h2> HTML& CSS ONLY</h2>
+    </div>
+
+    
+</body>
+</html>

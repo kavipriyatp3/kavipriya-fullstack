@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+        *{
+            margin:0px;
+            padding: 0px;   
+            box-sizing: border-box;
+        }
+        .main{
+            width:200px;
+            height:200px;
+            background-color: red;
+            position: absolute;
+            animation: move 5s linear 0s 4 reverse ;
+        }
+
+        @keyframes colorChange{
+              from{background-color: rgb(104, 55, 239);}
+              to{background-color: rgb(255, 0, 191);}
+        }
+
+        @keyframes move {
+             0%{left:0%;top:0%;background-color: blue;border-radius: 10%; }            
+             25%{left:80%;top:0%; background-color: rgb(64, 0, 255);border-radius: 20%; }            
+             50%{left:80%;top:80%;background-color: rgb(30, 104, 94); border-radius: 30%; }            
+             75%{left:0%;top:80%; background-color: rgb(131, 131, 200);border-radius: 40%; }            
+             100%{left:0%;top:0%;background-color: rgb(238, 255, 0); border-radius: 50%; }            
+        }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+     
+     
+</body>
+</html>
+    
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 10px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 100%;
+            height: 10vh;
+            background-color: aquamarine;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+        }
+        .edu-pro{
+            width: 250px;
+            height: 100%;
+           /* background-color: green;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .edu-pro img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            
+        }
+        .edu-pro span{
+            font-size: 30px;
+            font-weight: 600;
+            margin-left: 15px;
+            font-family: sans-serif;
+        }
+        .ul{
+           /* background-color: brown;*/
+            width: 500px;
+            height: 50%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ul>li{
+           /* background-color: orange;*/
+           /* border: 1px solid black;*/
+            list-style-type:none ;
+            padding: 15px 20px;
+            font-size: 18PX;
+
+        }
+        .link{
+           /* background-color: rgb(217,0,255);*/
+           text-decoration: none;
+
+        }
+        .request-btn{
+            width: 50px;
+            height: 50px;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            color: black;
+        }
+        .request-btn > i{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        .btn{
+            background-color: rgb(7,137,230);
+            font-size: 20px;
+            padding: 15px 20px;
+            border: none;
+            color: aliceblue;
+            border-radius: 30px;
+            margin-left: 20px;
+        }
+        .hero-section{
+            display: flex;
+            justify-content: space-between;
+           /* gap: 20px;*/
+        }
+        .con{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: start;
+            gap: 20px;
+            width: 50%;
+            padding: 20px 30px;
+            margin: 10px 30px;
+        }
+        .sub-heading{
+            color: #006bff;
+            letter-spacing: 1px;
+        }
+        .heading{
+            font-size: 50px;
+            font-weight: 800;
+            margin: 10px;
+        }
+        .description{
+            font-size: 20px;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        button{
+            background-color: #006bff;
+            color: aliceblue;
+            font-size: 10px;
+            padding: 10px 10px;
+            border-radius: 8px;
+            border: 1px solid#006bff;
+            margin-left: 10px;
+        }
+
+        .button2{
+            background-color: white;
+            color: #006bff;
+        } 
+        .con-img{
+            margin: auto;
+        } 
+        .con-img>img{
+            border-radius: 50%;
+            width: 300px;
+            height: 100%;
+        } 
+        .menu-bar{
+            display: none;
+            margin-left: 300px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+         @media screen and (max-width: 451px) {
+
+            nav {
+                position: relative;
+                z-index: 10;
+            }
+
+            .ul {
+                position: absolute;
+
+                top: 70px;
+                left: 0px;
+
+                width: 100%;
+                height: 0px;
+
+                background-color: red;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                padding: 0px;
+
+                overflow: hidden;
+
+                transition: height 2s ease;
+
+                z-index: 10;
+            }
+
+            .ul > li {
+                padding: 15px;
+            }
+
+            .requestbtn {
+                display: none;
+            }
+
+            .menu-bar {
+                display: flex;
+                z-index: 20;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                position: relative;
+                z-index: 1;
+            }
+
+            .con {
+                width: 100%;
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .heading {
+                font-size: 35px;
+            }
+
+            .con-img {
+                width: 100%;
+                text-align: center;
+            }
+
+            .con-img > img {
+                width: 250px;
+            }
+
+        }
+
+    </style>
+
+        
+</head>
+<body>
+        <nav>
+        <div class="edu-pro">
+            <img src="./image.png"alt="">
+            <span>EDUPRO</span>
+        </div>
+        <ul class="ul">
+            <li><a href="" class="link">Home</a></li>
+            <li><a href="" class="link">About</a></li>
+            <li><a href="" class="link">Course</a></li>
+            <li><a href="" class="link">Blog</a></li>
+            <li><a href="" class="link">Contact</a></li>
+            </ul>
+            <div class=" request-btn">
+                <i class="fa -solid fa-magnifying-glass"></i>
+                <button>Get Starded</button>
+            </div>
+            <div class="menu-bar" onclick="toggle()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+    </nav>
+                <section class="hero-section">
+                <div class="con">
+                    <h3 class="sub-heading">LEARN ANYTHING,ANYWHERE</h3>
+                    <h1 class="heading">Build Your Future With Better Learning</h1>
+                    <p class="description">Join thousands of students and learn new skills with our expert instructors</p>
+                    <div class="btn-grp">
+                        <button>Explore courses</button>
+                        <button class="button2">Watch video</button>
+                    </div>
+
+                </div>
+                <div class="con-img">
+                    <img src="./girl.jpg"/>
+                </div>
+            </section>
+            <script>
+                        let toggled = false;
+
+        function toggle() {
+
+            if (!toggled) {
+
+                document.getElementById("ul").style.height = "350px";
+
+                toggled = true;
+
+                return;
+            }
+
+            if (toggled) {
+
+                document.getElementById("ul").style.height = "0px";
+
+                toggled = false;
+
+                return;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html
+
+            
+
+    
+    
