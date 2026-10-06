@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <style>
+    .container {
+      margin: auto;
+      background:white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    input{
+        padding: 6px;
+        margin-bottom: 10px;
+        border: 1px solid black;
+        border-radius: 2px;
+    }
+    button {
+      background-color:black;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>SUBJECT & MARKS</h1>
+  <div class="container">
+    <label>UserName:</label>
+    <input type="text" id="username"><br>
+
+    <label>Tamil:</label>
+    <input type="number" id="tamil"><br>
+
+    <label>English:</label>
+    <input type="number" id="english"><br>
+
+    <label>Maths:</label>
+    <input type="number" id="maths"><br>
+
+    <label>Science:</label>
+    <input type="number" id="science"><br>
+
+    <label>Social:</label>
+    <input type="number" id="social"><br>
+
+     <button onclick="calculate()">calc</button>
+
+  </div>
+
+  <script>
+    function calculate() 
+        {
+        let name = document.getElementById("username").value;
+        let tamil = Number(document.getElementById("tamil").value) ;
+        let english = Number(document.getElementById("english").value);
+        let maths = Number(document.getElementById("maths").value) ;
+        let science = Number(document.getElementById("science").value) ;
+        let social = Number(document.getElementById("social").value);
+
+        let total = tamil + english + maths + science + social;
+        let average = total / 5;
+        let percentage = (total / 500) * 100;
+
+        let grade = "";
+        if (percentage >= 90) {
+            grade = "A+";
+        } else if (percentage >= 80) {
+            grade = "A";
+        } else if (percentage >= 70) {
+            grade = "B";
+        } else if (percentage >= 60) {
+            grade = "C";
+        } else {
+            grade = "F";
+        }
+
+        console.log("Name: " + name);
+        console.log("Total Marks: " + total);
+        console.log("Average Marks: " + average);
+        console.log("Percentage: " + percentage + "%");
+        console.log("Grade: " + grade);
+
+    }
+
+  </script>
+</body>
+</html>

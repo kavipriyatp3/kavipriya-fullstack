@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Analyzer</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee; 
+            font-family: arial,sans-serif;
+        }
+        form{
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px;
+        }
+        h1{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Result & Eligiblity Analyser</h1>
+    <form action="">
+        <label for="">Student Name:</label><input type="text" name="student name" id="student name"><br>
+        <label for="">Student ID:</label><input type="text" name="student id" id="Student ID"><br>
+        <label for="">Email:</label><input type="text" name="Email" id="Email"><br>
+        <label for="">Department:</label><input type="text" name="Department" id="Department"><br>
+        <label for="">Mark:</label><input type="text" name="Mark" id="Mark"><br>
+
+        <button onclick="checkResult()">CheckResult</button>
+
+        <h3 id="Result"></h3>
+    </form>
+    <script>
+        function validation(){
+            let Studentname=document.getElementById("student name").value.trim();
+            let StudentID=document.getElementById("studentid").value.trim();
+            let Email=document.getElementById("email").value.trim();
+            let Department=document.getElementById("department").value.trim();
+            let Mark=document.getElementById("mark").value;
+
+            if(name===""){
+                alert("student name cannot be empty");
+                return;
+            }
+            if(!studentid.startsWith("STU")||studentid.length!==6){
+                alert("student ID must start with STU and contain 6 characters");
+                return;
+            }
+            if(!email.includes("@)")||!email.includes(".")){
+                alert("Enter a valid email");
+                return;
+            }
+
+            let result;
+
+            if(mark>=50){
+                result="PASS";
+            }else{
+                result="FAIL";
+            }
+            document.getElementById("result").innerHTML=
+            "Student Name:"+ name + "<br>"+
+            "Student ID:"+ Studentid + "<br>"+
+            "Email:" + email +"<br>"+
+            "Department:" + department +"<br>"+
+            "Mark:" + mark +"<br>" +
+            "Result:" + result;
+
+
+        }
+        
+    </script>
+    
+</body>
+</html>

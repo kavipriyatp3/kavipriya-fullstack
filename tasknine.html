@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            margin-left: auto;
+            justify-content: center;
+        }
+        body{
+            width: 350px;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            border: 6px;
+            border-radius: 15px;
+            box-shadow: 0 0 12px;
+        }
+        button{
+            background-color:bisque;
+            margin-top : 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Result & Eligibility Analyzer</h2>
+
+<label>Student Name:</label>
+<input type="text" id="name">
+<br><br>
+
+<label>Student ID:</label>
+<input type="text" id="studentId">
+<br><br>
+
+<label>Email:</label>
+<input type="text" id="email">
+<br><br>
+
+<label>Department:</label>
+<input type="text" id="department">
+<br><br>
+
+<label>Mark:</label>
+<input type="number" id="mark">
+<br><br>
+
+<button onclick="checkResult()">Check Result</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function checkResult() {
+
+    let name = document.getElementById("name").value.trim();
+    let studentId = document.getElementById("studentId").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let validEmail =email.includes("@")&&email.includes(".");
+    let department = document.getElementById("department").value.trim();
+    let mark = Number(document.getElementById("mark").value);
+
+    if (name === "") {
+        alert("Student name cannot be empty");
+        return;
+    }
+    if (!studentId.startsWith("STU") || studentId.length !== 6) {
+        alert("Student ID must start with STU and contain 6 characters");
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Enter a valid email");
+        return;
+    }
+
+    let result;
+
+    if (mark >= 50) {
+        result = "PASS";
+    } else {
+        result = "FAIL";
+    }
+
+     let eligibility = (mark >= 60 && validEmail && validId) 
+                        ? "Eligible for Next Level" 
+                        : "Not Eligible";
+
+      let deptMessage = "";
+      switch(department) {
+        case "Java Full Stack":
+          deptMessage = "Recommended: Advanced Java & Spring Boot";
+          break;
+        case "Python Full Stack":
+          deptMessage = "Recommended: Django & REST API";
+          break;
+        case "MERN Stack":
+          deptMessage = "Recommended: React, Node.js & MongoDB";
+          break;
+        case "Data Analytics":
+          deptMessage = "Recommended: Machine Learning & Power BI";
+          break;
+        default:
+          deptMessage = "No recommendation available.";
+      }
+      let performance = mark >= 80 ? "Excellent" 
+                        : mark >= 60 ? "Good" 
+                        : "Needs Improvement";
+
+    
+    document.getElementById("result").innerHTML =
+        "Student Name : " + name + "<br>" +
+        "Student ID : " + studentId + "<br>" +
+        "Email : " + email + "<br>" +
+        "Department : " + department + "<br>" +
+        "Mark : " + mark + "<br>" +
+        "Result : " + result;
+}
+
+</script>
+    
+</body>
+</html>
