@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <title>HARSHINI-RESUME</title>
+    <title>MY PORTFOLIO</title>
     
     <style>
        *{
@@ -15,7 +15,7 @@
        }
        body{
         height: 100vh;
-        background: url("./image/back2-img.avif") no-repeat center / cover;
+        background: url("./background.jpg.jpeg") no-repeat center / cover;
         padding: 50px 5%;
         background-repeat: repeat;
        }
@@ -37,10 +37,10 @@
         z-index: 100;
        }
        .logo{
-        font-size: 46px;
+        font-size: 18px;
         color: #fff;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 400;
         padding: 10px 20px;
         font-style: oblique;
         display: flex;
@@ -49,16 +49,16 @@
         gap: 8px;
        }
        .logo img{
-        width: 70px;
-        height: 70px;
+        width: 45px;
+        height: 45px;
         border-radius: 55px;
        }
        .navbar a{
-        font-size: 25px;
+        font-size: 13px;
         color: #fff;
         text-decoration: none;
-        font-weight: 500;
-        margin-left: 35px;
+        font-weight: 200;
+        margin-left: 20px;
         /* border-bottom: 2px solid transparent;
         transition: .5s; */
        }
@@ -76,11 +76,13 @@
         color: #fff;
        }
        .home-detail h1 {
-        font-size: 55px;
+        font-size: 16px;
         line-height: 1;
        }
        .home-detail h2 {
-        font-size: 32px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 5px;
        }
        .home-detail.download-social {
         display: flex;
@@ -88,7 +90,7 @@
        }
        .button {
         display: inline-block;
-        padding: 10px 30px;
+        padding: 8px 20px;
         background-color: #fff;
         border-radius: 40px;
         color: #333;
@@ -140,7 +142,7 @@
         margin-bottom: 50px;
        }
        #about h2{
-        font-size: 32px;
+        font-size: 30px;
         /* color: #fff; */
         margin-bottom: 20px;
         letter-spacing: 2px;
@@ -156,7 +158,7 @@
         border-radius: 10px;
        }
        #about > p{
-        font-size: 18px;
+        font-size: 20px;
         color: gold;
         max-width: 700px;
         margin: 0 auto 30px;
@@ -307,14 +309,33 @@
     background: #0a1931;
     color: #fff;
 }
-
+@media(max-width;786px){
+    .content{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .left h1{
+        font-size: 28px;
+    }
+    .right img{
+        width: 200px;
+        height: 230px;
+    }
+    .menu{
+        display: none;
+    }
+    .hero{
+        background: linear-gradient(180deg,#d46a11);
+    }
+    
+} 
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <img src="./image/harshini-pic.png" alt="harsh">HARSHINI
+                <img src="./kavi.png.jpeg" alt="kavi">KAVIPRIYA
 
             </div>
             <nav class="navbar">
@@ -327,7 +348,7 @@
         </header> 
         <section class="home">
             <div class="home-detail">
-                <h1>I AM HARSHINI</h1>
+                <h1>I AM KAVIPRIYA</h1>
                 <h2>I am Website Developer</h2>
                 <div class="download">
                     <a href="#" class="button">DOWNLOAD CV</a>
@@ -342,19 +363,19 @@
         
             <div class="home-img">
                 <div class="img-box">
-                    <img src="./image/Harshini Pic.jpeg" alt="ha">
+                    <img src="./kavi.png.jpeg" alt="ha">
 
                 </div>
             </div>
         </section>
         <section id="about" class="ABOUT">
             <h2>ABOUT ME</h2>
-            <p>I am Harshini, a website developer from Madurai. I love creating beautiful websites.</p>
+            <p>I am kavipriya, a website developer from Madurai. I love creating beautiful websites.</p>
 
             <div class="about-details">
-                <p><strong>DOB :</strong>03-04-2005</p>
+                <p><strong>DOB :</strong>13-07-2000</p>
                 <p><strong>Gender :</strong>Female</p>
-                <p><strong>Location</strong>Y.Kodikulam</p>
+                <p><strong>Location</strong>Melur</p>
 
             </div>
         </section>
@@ -362,7 +383,6 @@
             <h2>SKILLS</h2>
             <div class="skills-details">
             <p>COMMUNICATION SKILLS</p>
-            <p>MS OFFICE</p>
             <p>HTML</p>
             <p>CSS</p>
             </div>
