@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Butterfly</title>
+
+    <style>
+        .butterfly {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #butterfly {
+            width: 200px;
+        }
+
+        .move {
+            animation: flap 0.5s infinite alternate;
+        }
+
+        @keyframes flap {
+            from {
+                transform: scaleX(1);
+            }
+
+            to {
+                transform: scaleX(0.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="butterfly">
+
+        <img id="butterfly" src="./butterfly.avif">
+
+        <br><br>
+
+        <button onclick="start()">ON</button>
+        <button onclick="stop()">OFF</button>
+
+    </div>
+
+    <script>
+
+        let butterfly = document.getElementById("butterfly");
+
+        function start() {
+            butterfly.classList.add("move");
+        }
+
+        function stop() {
+            butterfly.classList.remove("move");
+        }
+
+    </script>
+
+</body>
+</html>
