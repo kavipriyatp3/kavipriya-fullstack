@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        employees = [
+  { id: 101, name: "Arun", department: "IT", salary: 75000, performance: 92, experience: 6, active: true, skills: ["JavaScript", "React"] },
+  { id: 102, name: "Priya", department: "HR", salary: 48000, performance: 85, experience: 4, active: true, skills: ["Excel", "Recruitment"] },
+  { id: 103, name: "Karthik", department: "IT", salary: 95000, performance: 96, experience: 8, active: true, skills: ["Java", "Spring"] },
+  { id: 104, name: "Divya", department: "Finance", salary: 65000, performance: 78, experience: 5, active: true, skills: ["Excel", "SQL"] },
+  { id: 105, name: "Vijay", department: "IT", salary: 55000, performance: 68, experience: 2, active: true, skills: ["JavaScript", "HTML"] },
+  { id: 106, name: "Meena", department: "Finance", salary: 82000, performance: 91, experience: 7, active: true, skills: ["SQL", "Python"] },
+  { id: 107, name: "Suresh", department: "HR", salary: 42000, performance: 62, experience: 3, active: false, skills: ["Recruitment"] },
+  { id: 108, name: "Nithya", department: "IT", salary: 88000, performance: 89, experience: 5, active: true, skills: ["React", "Node.js"] },
+  { id: 109, name: "Praveen", department: "Sales", salary: 60000, performance: 75, experience: 4, active: true, skills: ["Communication", "CRM"] },
+  { id: 110, name: "Lakshmi", department: "Sales", salary: 72000, performance: 94, experience: 6, active: true, skills: ["CRM", "Analytics"] },
+  { id: 111, name: "Manoj", department: "Finance", salary: 50000, performance: 55, experience: 1, active: false, skills: ["Excel"] },
+  { id: 112, name: "Anitha", department: "IT", salary: 105000, performance: 98, experience: 10, active: true, skills: ["Java", "AWS", "SQL"] }
+]
+let Fid108 = employees.find((val, ind, arr) => val.id == 108)
+     console.log(Fid108)
+     
+     let highestSal = employees.map((val, ind, arr) => val.salary).sort((a, b) => b - a)[0]
+     console.log(highestSal)
+    
+     let highestEmp = employees.find((val, ind, arr) => val.salary == highestSal)
+     console.log(highestEmp)
+    
+     let aws_skill = employees.filter((val, ind, arr) => val.skills.includes("AWS"))
+     console.log(aws_skill)
+    
+     let React_Pos = employees.filter((val, ind, arr) => val.skills.includes("React")).map((val, ind, arr) => val.skills.indexOf("React"))
+     console.log(React_Pos)
+    
+    let below60 = employees.some((val, ind, arr) => val.performance < 60)
+    console.log(below60)
+    
+    let activePerformance = employees.filter((val, ind, arr) => val.active == true).every((val, ind, arr) => val.performance >= 70)
+    console.log(activePerformance)
+    
+    let activeEmp = employees.filter((val, ind, arr) => val.active == true)
+    console.log(activeEmp)
+
+    
+    let IT_Emp = employees.filter((val, ind, arr) => val.department == "IT")
+    console.log(IT_Emp)
+    
+    let highSalary = employees.filter((val, ind, arr) => val.salary > 70000)
+    console.log(highSalary)
+    
+    let highPerformance = employees.filter((val, ind, arr) => val.performance >= 90)
+    console.log(highPerformance)
+    
+    let sortedSalary = employees.map((val, ind, arr) => val.salary).sort((a, b) => b - a)
+    console.log(sortedSalary)
+    
+    let top3 = [...employees].sort((a, b) => b.salary - a.salary).slice(0, 3)
+    console.log(top3)
+   
+    let experienceSort = [...employees].sort((a, b) => a.experience - b.experience)
+    console.log(experienceSort)
+    
+    let eligibleEmp = employees.filter((val, ind, arr) =>val.active == true &&val.experience >= 5 &&val.performance > 85)
+    console.log(eligibleEmp)
+    
+    let total = employees.filter(emp => emp.active == true).reduce((sum, emp) => sum + emp.salary, 0)
+    console.log(total)
+
+    let totalSalary = employees.reduce((a, b) => a + b.salary, 0)
+    console.log(totalSalary)
+     
+    let totalIT = employees.filter(emp => emp.department == "IT").reduce((sum, emp) => sum + emp.salary, 0);
+    console.log(totalIT);
+  
+    let performanceCount = employees.filter((val, ind, arr) => val.performance >= 90).length
+    console.log(performanceCount)
+    
+    let annualSalary = employees.filter((val, ind, arr) => val.active == true).reduce((a, b) => a + b.salary, 0) * 12
+    console.log(annualSalary)
+
+    let bonus = employees.filter((val, ind, arr) => val.active == true).map((val, ind, arr) => ({
+        name: val.name,
+        salary: val.salary,
+        bonus: val.salary * 0.10
+    }))
+    console.log(bonus)
+
+    let totalBonus = employees.filter((val, ind, arr) => val.active == true).reduce((acc, val) => acc + val.salary * 0.10, 0)
+    console.log(totalBonus)
+
+    let employeeReport = employees.map((val, ind, arr) => { return {
+        name: val.name,
+        department: val.department,
+        salary: val.salary,
+        performance: val.performance
+    };
+});
+    console.log(employeeReport)
+ 
+    let performanceStatus = employees.map((val, ind, arr) => {
+    return {
+        ...val,
+        performanceStatus:
+            val.performance >= 90 ? "Excellent" :
+            val.performance >= 75 ? "Good" :
+            val.performance >= 60 ? "Average" :
+            "Needs Improvement"
+    };
+})
+
+    console.log(performanceStatus)
+
+    let salaryReport = employees.map((val, ind, arr) => {
+    return {
+        name: val.name,
+        salary: val.salary,
+        bonus: val.salary * 0.10,
+        finalSalary: val.salary + val.salary * 0.10
+    };
+})
+
+     console.log(salaryReport)
+
+     let upperNames = employees.map((val, ind, arr) => val.name.toUpperCase());
+     console.log(upperNames);
+
+     let activeSorted = employees.filter((val, ind, arr) => val.active == true).sort((a, b) => b.salary - a.salary).map((val, ind, arr) => {
+        return {
+            name: val.name,
+            salary: val.salary
+        };
+    });
+     console.log(activeSorted);
+
+     let deptCount = employees.reduce((acc, val) => {if (acc[val.department]) {
+        acc[val.department]++;
+    }
+    else {
+        acc[val.department] = 1;
+    }
+
+    return acc;
+    }, {});
+    console.log(deptCount);
+
+    let deptSalary = employees.reduce((acc, val) => {
+    if (acc[val.department]) {
+        acc[val.department] += val.salary;
+    }
+    else {
+        acc[val.department] = val.salary;
+    }
+
+    return acc;
+    }, {});
+    console.log(deptSalary);
+
+    let deptSalary2 = employees.reduce((acc, val) => {
+    if (acc[val.department]) {
+        acc[val.department] += val.salary;
+    }
+    else {
+        acc[val.department] = val.salary;
+    }
+
+    return acc;
+}, {});
+
+   let highestDept = Object.entries(deptSalary2).sort((a, b) => b[1] - a[1])[0];
+   console.log(highestDept);
+
+   let deptPerformance = employees.reduce((acc, val) => {
+    if (!acc[val.department]) {
+        acc[val.department] = {
+            total: 0,
+            count: 0
+        };
+    }
+
+    acc[val.department].total += val.performance;
+    acc[val.department].count++;
+
+    return acc;
+}, {});
+
+    let averagePerformance = Object.keys(deptPerformance).map((val) => {
+    return {
+        department: val,
+        average: deptPerformance[val].total / deptPerformance[val].count
+    };
+});
+
+    console.log(averagePerformance);
+
+
+    let lowPerformanceDept = employees.filter((val, ind, arr) => val.performance < 60).map((val, ind, arr) => val.department).filter((val, ind, arr) => arr.indexOf(val) == ind);
+
+    console.log(lowPerformanceDept);
+
+    
+    let deptReport = employees.reduce((acc, val) => {
+    if (!acc[val.department]) {
+        acc[val.department] = {
+            count: 0,
+            salary: 0,
+            performance: 0
+        };
+    }
+
+    acc[val.department].count++;
+    acc[val.department].salary += val.salary;
+    acc[val.department].performance += val.performance;
+
+    return acc;
+}, {});
+
+   let finalDeptReport = Object.keys(deptReport).map((val) => {
+    return {
+        department: val,
+        employeeCount: deptReport[val].count,
+        totalSalary: deptReport[val].salary,
+        averagePerformance: deptReport[val].performance / deptReport[val].count
+    };
+});
+ 
+     console.log(finalDeptReport);
+
+     let allSkills = employees.reduce((acc, val) => {
+    return acc.concat(val.skills);
+}, []);
+    console.log(allSkills);
+
+
+    let uniqueSkills = allSkills.filter((val, ind, arr) => arr.indexOf(val) == ind);
+    console.log(uniqueSkills);
+
+
+    let pythonSkill = allSkills.includes("Python");
+    console.log(pythonSkill);
+
+
+    let sqlPosition = allSkills.indexOf("SQL");
+    console.log(sqlPosition);
+
+    let newEmployee = [...employees];
+    newEmployee.push({
+    id: 113,
+    name: "Ravi",
+    department: "IT",
+    salary: 60000,
+    performance: 80,
+    experience: 3,
+    active: true,
+    skills: ["HTML", "CSS"]
+});
+    console.log(newEmployee);
+
+
+    let removeEmployee = [...employees];
+    removeEmployee.pop();
+    console.log(removeEmployee);
+
+    let original = [...employees];
+    let sorted = [...employees].sort((a, b) => b.salary - a.salary);
+    console.log(sorted);
+    console.log(original[0].id == employees[0].id);
+
+
+    let bonuseligible = employees.filter((val) => val.active == true && val.performance >= 80).sort((a, b) => b.salary - a.salary)
+    .map((val) => {
+        let percentage = val.performance >= 95 ? 15 : 10;
+
+        return {
+            name: val.name,
+            salary: val.salary,
+            bonus: val.salary * percentage / 100,
+            finalSalary: val.salary + val.salary * percentage / 100
+        };
+    });
+    console.log(bonuseligible);
+
+
+    let report = {
+    totalEmployees: employees.length,
+
+    activeEmployees: employees.filter((val) => val.active == true).length,
+
+    inactiveEmployees: employees.filter((val) => val.active == false).length,
+
+    totalSalary: employees.reduce((acc, val) => acc + val.salary, 0),
+
+    averageSalary: employees.reduce((acc, val) => acc + val.salary, 0) / employees.length,
+
+    highestSalary: [...employees].sort((a, b) => b.salary - a.salary)[0],
+
+    lowestSalary: [...employees].sort((a, b) => a.salary - b.salary)[0],
+
+    topPerformers: [...employees].sort((a, b) => b.performance - a.performance).slice(0, 3),
+
+    improvementEmployees: employees.filter((val) => val.performance < 60)
+};
+
+console.log(report);
+
+
+    </script>
+    
+</body>
+</html>
