@@ -18,91 +18,330 @@
       --success: #10b981;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: var(--bg-light); color: var(--text-dark); min-height: 100vh; }
+    * { 
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0; 
+        font-family: system-ui, -apple-system, sans-serif; 
+    }
+    body {
+         background: var(--bg-light);
+          color: var(--text-dark);
+           min-height: 100vh; 
+        }
 
-    .app-container { display: flex; min-height: 100vh; }
-    .sidebar { width: 250px; background: #1e293b; color: white; padding: 1rem; transition: transform 0.2s ease; }
-    .sidebar-header h2 { font-size: 1.25rem; margin-bottom: 2rem; color: #38bdf8; }
-    .nav-links { list-style: none; }
-    .nav-links li { margin-bottom: 0.5rem; }
-    .nav-btn { color: #94a3b8; text-decoration: none; display: block; padding: 0.75rem 1rem; border-radius: 6px; font-weight: 500; }
-    .nav-btn.active, .nav-btn:hover { background: #334155; color: white; }
-
-    .main-content { flex: 1; padding: 1.5rem; overflow-y: auto; }
-    .top-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-    #toggle-sidebar { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
-
-    .page-section { display: none; }
-    .page-section.active { display: block; }
-
-    .card { background: var(--card-bg); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem; }
-    .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
-    .kpi-card { background: var(--card-bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
-    .kpi-card p { font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-top: 0.5rem; }
-
-    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
-    .grid-2col { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; }
-
-    .table-container { overflow-x: auto; }
-    .data-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.9rem; }
-    .data-table th, .data-table td { border: 1px solid var(--border); padding: 0.6rem 0.8rem; text-align: left; }
-    .data-table th { background: #f1f5f9; }
-
-    .btn { padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; }
-    .btn.primary { background: var(--primary); color: white; }
-    .btn.secondary { background: #e2e8f0; color: var(--text-dark); }
-    .btn.danger { background: var(--danger); color: white; }
-    .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.8rem; }
-
-    .actions-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
-    .search-filter-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    input, select, textarea { padding: 0.5rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.9rem; }
-    .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.25rem; }
-    .form-inline { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-
-    .avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
-    .avatar-placeholder { width: 36px; height: 36px; border-radius: 50%; background: #cbd5e1; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-
-    .badge { padding: 0.2rem 0.5rem; border-radius: 12px; font-size: 0.75rem; color: white; text-align: center; display: inline-block; }
-    .badge.green { background: var(--success); }
-    .badge.amber { background: var(--warning); }
-    .badge.red { background: var(--danger); }
-
-    .bar-container { background: #e2e8f0; height: 16px; border-radius: 8px; overflow: hidden; margin-top: 4px; }
-    .bar-fill { background: var(--primary); height: 100%; transition: width 0.3s; }
-
-    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000; }
-    .modal-content { background: white; padding: 1.5rem; border-radius: 8px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative; }
-    .close-modal { position: absolute; right: 1rem; top: 1rem; font-size: 1.5rem; cursor: pointer; }
-    .error-msg { color: var(--danger); font-size: 0.8rem; }
-    .alert { padding: 0.75rem; border-radius: 4px; margin-bottom: 1rem; font-size: 0.9rem; }
-    .alert.success { background: #d1fae5; color: #065f46; }
-    .alert.error { background: #fee2e2; color: #991b1b; }
-
-    .mb-1 { margin-bottom: 1rem; }
-    .mt-1 { margin-top: 1rem; }
+    .app-container {
+         display: flex; 
+         min-height: 100vh; 
+        }
+    .sidebar {
+        width: 250px;
+        background: #1e293b;
+        color: white; 
+        padding: 1rem; 
+        transition: transform 0.2s ease; 
+    }
+    .sidebar-header h2 { 
+        font-size: 1.25rem; 
+        margin-bottom: 2rem; 
+        color: #38bdf8; 
+    }
+    .nav-links {
+         list-style: none; 
+        }
+    .nav-links li { 
+        margin-bottom: 0.5rem; 
+    }
+    .nav-btn { 
+        color: #94a3b8; 
+        text-decoration: none; 
+        display: block; 
+        padding: 0.75rem 1rem; 
+        border-radius: 6px; 
+        font-weight: 500; 
+    }
+    .nav-btn.active, .nav-btn:hover { 
+        background: #334155; 
+        color: white; 
+    }
+    .main-content { 
+        flex: 1; 
+        padding: 1.5rem; 
+        overflow-y: auto; 
+    }
+    .top-header { 
+        display: flex; 
+        align-items: center; 
+        gap: 1rem; 
+        margin-bottom: 1.5rem; 
+    }
+    #toggle-sidebar { 
+        display: none; 
+        font-size: 1.5rem; 
+        background: none; 
+        border: none; 
+        cursor: pointer; 
+    }
+    .page-section { 
+        display: none; 
+    }
+    .page-section.active { 
+        display: block; 
+    }
+    .card { 
+        background: var(--card-bg); 
+        padding: 1.25rem; 
+        border-radius: 8px; 
+        border: 1px solid var(--border); 
+        margin-bottom: 1rem; 
+    }
+    .kpi-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+        gap: 1rem; 
+        margin-bottom: 1rem; 
+    }
+    .kpi-card { 
+        background: var(--card-bg); 
+        padding: 1rem; 
+        border-radius: 8px; 
+        border: 1px solid var(--border); 
+        text-align: center; 
+    }
+    .kpi-card p { 
+        font-size: 1.5rem; 
+        font-weight: bold; 
+        color: var(--primary);
+        margin-top: 0.5rem; 
+    }
+    .dashboard-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+        gap: 1rem; 
+    }
+    .grid-2col { 
+        display: grid; 
+        grid-template-columns: 1fr 2fr; 
+        gap: 1rem; 
+    }
+    .table-container { 
+        overflow-x: auto; 
+    }
+    .data-table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 0.5rem; 
+        font-size: 0.9rem;
+    }
+    .data-table th, .data-table td { 
+        border: 1px solid var(--border); 
+        padding: 0.6rem 0.8rem; 
+        text-align: left; 
+    }
+    .data-table th { 
+        background: #f1f5f9; 
+    }
+    .btn { 
+        padding: 0.5rem 1rem; 
+        border: none; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-weight: 500; 
+    }
+    .btn.primary { 
+        background: var(--primary); 
+        color: white;
+    }
+    .btn.secondary { 
+        background: #e2e8f0; 
+        color: var(--text-dark); 
+    }
+    .btn.danger { 
+        background: var(--danger); 
+        color: white; 
+    }
+    .btn-sm { 
+        padding: 0.25rem 0.5rem; 
+        font-size: 0.8rem; 
+    }
+    .actions-bar { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        margin-bottom: 1rem; 
+        gap: 1rem; 
+        flex-wrap: wrap; 
+    }
+    .search-filter-group { 
+        display: flex; 
+        gap: 0.5rem; 
+        flex-wrap: wrap; 
+    }
+    input, select, textarea { 
+        padding: 0.5rem; 
+        border: 1px solid var(--border); 
+        border-radius: 4px; 
+        font-size: 0.9rem; 
+    }
+    .form-group { 
+        margin-bottom: 1rem; 
+        display: flex; 
+        flex-direction: column; 
+        gap: 0.25rem; 
+    }
+    .form-inline { 
+        display: flex; 
+        gap: 1rem; 
+        align-items: center; 
+        flex-wrap: wrap; 
+    }
+    .avatar { 
+        width: 36px; 
+        height: 36px; 
+        border-radius: 50%; 
+        object-fit: cover;
+    }
+    .avatar-placeholder { 
+        width: 36px; 
+        height: 36px; 
+        border-radius: 50%; 
+        background: #cbd5e1; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-weight: bold; 
+    }
+    .badge { 
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px; 
+        font-size: 0.75rem; 
+        color: white; 
+        text-align: center; 
+        display: inline-block; 
+    }
+    .badge.green { 
+        background: var(--success); 
+    }
+    .badge.amber { 
+        background: var(--warning); 
+    }
+    .badge.red { 
+        background: var(--danger); 
+    }
+    .bar-container { 
+        background: #e2e8f0; 
+        height: 16px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        margin-top: 4px; 
+    }
+    .bar-fill { 
+        background: var(--primary); 
+        height: 100%; 
+        transition: width 0.3s; 
+    }
+    .modal { 
+        display: none; 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+        background: rgba(0,0,0,0.5); 
+        justify-content: center; 
+        align-items: center; 
+        z-index: 1000; 
+    }
+    .modal-content { 
+        background: white; 
+        padding: 1.5rem; 
+        border-radius: 8px; 
+        width: 90%; 
+        max-width: 500px; 
+        max-height: 90vh; 
+        overflow-y: auto; 
+        position: relative;
+    }
+    .close-modal { 
+        position: absolute; 
+        right: 1rem; 
+        top: 1rem; 
+        font-size: 1.5rem; 
+        cursor: pointer; 
+    }
+    .error-msg { 
+        color: var(--danger); 
+        font-size: 0.8rem; 
+    }
+    .alert {
+        padding: 0.75rem; 
+        border-radius: 4px; 
+        margin-bottom: 1rem; 
+        font-size: 0.9rem; 
+    }
+    .alert.success {
+        background: #d1fae5; 
+        color: #065f46; 
+    }
+    .alert.error { 
+        background: #fee2e2; 
+        color: #991b1b; 
+    }
+    .mb-1 { 
+        margin-bottom: 1rem; 
+    }
+    .mt-1 { 
+        margin-top: 1rem; 
+    }
 
     @media print {
-      .sidebar, .top-header, .actions-bar, .btn, .no-print { display: none !important; }
-      .main-content { padding: 0 !important; margin: 0 !important; }
-      .card { border: none !important; box-shadow: none !important; page-break-inside: avoid; }
-      body { background: white !important; color: black !important; }
-      .data-table th, .data-table td { border: 1px solid #000 !important; }
+      .sidebar, .top-header, .actions-bar, .btn, .no-print { 
+        display: none !important; 
+      }
+      .main-content {
+         padding: 0 !important; 
+         margin: 0 !important; 
+        }
+      .card {
+         border: none !important;
+        box-shadow: none !important; 
+        page-break-inside: avoid; 
+      }
+      body { 
+        background: white !important; 
+        color: black !important; 
+      }
+      .data-table th, .data-table td { 
+        
+        border: 1px solid #000 !important; }
     }
 
     @media (max-width: 768px) {
-      .app-container { flex-direction: column; }
-      .sidebar { width: 100%; transform: translateY(-100%); position: absolute; z-index: 10; display: none; }
-      .sidebar.show { transform: translateY(0); display: block; }
-      #toggle-sidebar { display: block; }
-      .grid-2col { grid-template-columns: 1fr; }
+      .app-container { 
+        flex-direction: column; 
+      }
+      .sidebar { 
+        width: 100%; 
+        transform: translateY(-100%); 
+        position: absolute; 
+        z-index: 10; 
+        display: none; 
+      }
+      .sidebar.show { 
+        transform: translateY(0); 
+        display: block; 
+      }
+      #toggle-sidebar { 
+        display: block; 
+      }
+      .grid-2col { 
+        grid-template-columns: 1fr; 
+      }
     }
   </style>
 </head>
 <body>
   <div class="app-container">
-    <!-- Sidebar Navigation -->
     <nav class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <h2>MGI Analytics</h2>
@@ -119,7 +358,6 @@
       </ul>
     </nav>
 
-    <!-- Main Content Area -->
     <main class="main-content">
       <header class="top-header">
         <button id="toggle-sidebar" class="btn-icon">☰</button>
@@ -128,7 +366,6 @@
 
       <div id="alert-container"></div>
 
-      <!-- Module A: Dashboard -->
       <section id="page-dashboard" class="page-section active">
         <div class="kpi-grid">
           <div class="kpi-card"><h3>Total Students</h3><p id="kpi-total-students">0</p></div>
@@ -154,7 +391,6 @@
         </div>
       </section>
 
-      <!-- Module B & C: Students List -->
       <section id="page-students" class="page-section">
         <div class="actions-bar">
           <div class="search-filter-group">
@@ -189,7 +425,6 @@
         </div>
       </section>
 
-      <!-- Module D: Attendance -->
       <section id="page-attendance" class="page-section">
         <div class="card">
           <h3>Daily Attendance Sheet</h3>
@@ -215,7 +450,6 @@
         </div>
       </section>
 
-      <!-- Module E: Tasks -->
       <section id="page-tasks" class="page-section">
         <div class="grid-2col">
           <div class="card">
@@ -244,24 +478,23 @@
           <div class="card">
             <h3>Tasks List</h3>
             <div class="table-container">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Student</th>
-                    <th>Title</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
+            <table class="data-table">
+            <thead>
+                <tr>
+                <th>Student</th>
+                <th>Title</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th>Action</th>
+                </tr>
+            </thead>
                 <tbody id="tasks-table-body"></tbody>
-              </table>
+            </table>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Module F: Activities -->
       <section id="page-activities" class="page-section">
         <div class="grid-2col">
           <div class="card">
@@ -297,24 +530,24 @@
           <div class="card">
             <h3>Activity History</h3>
             <div class="table-container">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Student</th>
-                    <th>Type</th>
-                    <th>Category</th>
-                    <th>Points</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
+            <table class="data-table">
+            <thead>
+            <tr>
+            <th>Student</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Points</th>
+            <th>Description</th>
+            </tr>
+            </thead>
                 <tbody id="activities-table-body"></tbody>
-              </table>
+            </table>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Module G: Performance Analysis -->
+    
       <section id="page-analysis" class="page-section">
         <div class="card mb-1">
           <h3>Individual Student Indicator Matrix</h3>
@@ -341,7 +574,7 @@
         </div>
       </section>
 
-      <!-- Module H: Reports -->
+    
       <section id="page-reports" class="page-section">
         <div class="card mb-1 no-print">
           <h3>Report Generator</h3>
@@ -359,7 +592,7 @@
         </div>
       </section>
 
-      <!-- Module I: Storage Controls -->
+    
       <section id="page-data" class="page-section">
         <div class="card">
           <h3>Storage Controls</h3>
@@ -374,7 +607,7 @@
     </main>
   </div>
 
-  <!-- Student Form Modal -->
+
   <div id="student-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
@@ -427,8 +660,7 @@
       </form>
     </div>
   </div>
-
-  <!-- FULL JAVASCRIPT LOGIC -->
+  
   <script>
     const CONFIG = {
       KEYS: {
