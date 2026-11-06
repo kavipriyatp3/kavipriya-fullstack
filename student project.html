@@ -336,396 +336,10 @@
       }
       .grid-2col { 
         grid-template-columns: 1fr; 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-
-    body {
-      background: var(--bg-light);
-      color: var(--text-dark);
-      min-height: 100vh;
-    }
-
-    .app-container {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      width: 250px;
-      background: #1e293b;
-      color: white;
-      padding: 1rem;
-      transition: transform 0.2s ease;
-    }
-
-    .sidebar-header h2 {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      color: #38bdf8;
-    }
-
-    .nav-links {
-      list-style: none;
-    }
-
-    .nav-links li {
-      margin-bottom: 0.5rem;
-    }
-
-    .nav-btn {
-      color: #94a3b8;
-      text-decoration: none;
-      display: block;
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    .nav-btn.active,
-    .nav-btn:hover {
-      background: #334155;
-      color: white;
-    }
-
-    .main-content {
-      flex: 1;
-      padding: 1.5rem;
-      overflow-y: auto;
-    }
-
-    .top-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    #toggle-sidebar {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .page-section {
-      display: none;
-    }
-
-    .page-section.active {
-      display: block;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 1.25rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      margin-bottom: 1rem;
-    }
-
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .kpi-card {
-      background: var(--card-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .kpi-card p {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--primary);
-      margin-top: 0.5rem;
-    }
-
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-
-    .grid-2col {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 1rem;
-    }
-
-    .table-container {
-      overflow-x: auto;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .data-table th,
-    .data-table td {
-      border: 1px solid var(--border);
-      padding: 0.6rem 0.8rem;
-      text-align: left;
-    }
-
-    .data-table th {
-      background: #f1f5f9;
-    }
-
-    .btn {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .btn.primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn.secondary {
-      background: #e2e8f0;
-      color: var(--text-dark);
-    }
-
-    .btn.danger {
-      background: var(--danger);
-      color: white;
-    }
-
-    .btn-sm {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    .actions-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .search-filter-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    input,
-    select,
-    textarea {
-      padding: 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .form-inline {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .avatar-placeholder {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #cbd5e1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .badge {
-      padding: 0.2rem 0.5rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      color: white;
-      text-align: center;
-      display: inline-block;
-    }
-
-    .badge.green {
-      background: var(--success);
-    }
-
-    .badge.amber {
-      background: var(--warning);
-    }
-
-    .badge.red {
-      background: var(--danger);
-    }
-
-    .bar-container {
-      background: #e2e8f0;
-      height: 16px;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: 4px;
-    }
-
-    .bar-fill {
-      background: var(--primary);
-      height: 100%;
-      transition: width 0.3s;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 500px;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-
-    .close-modal {
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .error-msg {
-      color: var(--danger);
-      font-size: 0.8rem;
-    }
-
-    .alert {
-      padding: 0.75rem;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .alert.success {
-      background: #d1fae5;
-      color: #065f46;
-    }
-
-    .alert.error {
-      background: #fee2e2;
-      color: #991b1b;
-    }
-
-    .mb-1 {
-      margin-bottom: 1rem;
-    }
-
-    .mt-1 {
-      margin-top: 1rem;
-    }
-
-    @media print {
-
-      .sidebar,
-      .top-header,
-      .actions-bar,
-      .btn,
-      .no-print {
-        display: none !important;
-      }
-
-      .main-content {
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .card {
-        border: none !important;
-        box-shadow: none !important;
-        page-break-inside: avoid;
-      }
-
-      body {
-        background: white !important;
-        color: black !important;
-      }
-
-      .data-table th,
-      .data-table td {
-        border: 1px solid #000 !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .app-container {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        width: 100%;
-        transform: translateY(-100%);
-        position: absolute;
-        z-index: 10;
-        display: none;
-      }
-
-      .sidebar.show {
-        transform: translateY(0);
-        display: block;
-      }
-
-      #toggle-sidebar {
-        display: block;
-      }
-
-      .grid-2col {
-        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-
 <body>
   <div class="app-container">
     <nav class="sidebar" id="sidebar">
@@ -754,26 +368,11 @@
 
       <section id="page-dashboard" class="page-section active">
         <div class="kpi-grid">
-          <div class="kpi-card">
-            <h3>Total Students</h3>
-            <p id="kpi-total-students">0</p>
-          </div>
-          <div class="kpi-card">
-            <h3>Active Students</h3>
-            <p id="kpi-active-students">0</p>
-          </div>
-          <div class="kpi-card">
-            <h3>Today Attendance</h3>
-            <p id="kpi-today-att">0%</p>
-          </div>
-          <div class="kpi-card">
-            <h3>Task Completion</h3>
-            <p id="kpi-task-rate">0%</p>
-          </div>
-          <div class="kpi-card">
-            <h3>Net Points</h3>
-            <p id="kpi-net-points">0</p>
-          </div>
+          <div class="kpi-card"><h3>Total Students</h3><p id="kpi-total-students">0</p></div>
+          <div class="kpi-card"><h3>Active Students</h3><p id="kpi-active-students">0</p></div>
+          <div class="kpi-card"><h3>Today Attendance</h3><p id="kpi-today-att">0%</p></div>
+          <div class="kpi-card"><h3>Task Completion</h3><p id="kpi-task-rate">0%</p></div>
+          <div class="kpi-card"><h3>Net Points</h3><p id="kpi-net-points">0</p></div>
         </div>
 
         <div class="dashboard-grid">
@@ -796,9 +395,7 @@
         <div class="actions-bar">
           <div class="search-filter-group">
             <input type="text" id="student-search" placeholder="Search by name or ID...">
-            <select id="filter-course">
-              <option value="">All Courses</option>
-            </select>
+            <select id="filter-course"><option value="">All Courses</option></select>
             <select id="filter-status">
               <option value="">All Statuses</option>
               <option value="Active">Active</option>
@@ -965,38 +562,13 @@
           <h3>Rating Rules Explanation</h3>
           <table class="data-table">
             <thead>
-              <tr>
-                <th>Indicator</th>
-                <th>Green</th>
-                <th>Amber</th>
-                <th>Red</th>
-              </tr>
+              <tr><th>Indicator</th><th>Green</th><th>Amber</th><th>Red</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Attendance %</td>
-                <td>≥ 90.0%</td>
-                <td>75.0% - 89.9%</td>
-                <td>&lt; 75.0%</td>
-              </tr>
-              <tr>
-                <td>Task Completion %</td>
-                <td>≥ 80.0%</td>
-                <td>50.0% - 79.9%</td>
-                <td>&lt; 50.0%</td>
-              </tr>
-              <tr>
-                <td>Overdue Tasks</td>
-                <td>0</td>
-                <td>1 - 2</td>
-                <td>≥ 3</td>
-              </tr>
-              <tr>
-                <td>Net Points</td>
-                <td>≥ +10</td>
-                <td>0 to +9</td>
-                <td>&lt; 0</td>
-              </tr>
+              <tr><td>Attendance %</td><td>≥ 90.0%</td><td>75.0% - 89.9%</td><td>&lt; 75.0%</td></tr>
+              <tr><td>Task Completion %</td><td>≥ 80.0%</td><td>50.0% - 79.9%</td><td>&lt; 50.0%</td></tr>
+              <tr><td>Overdue Tasks</td><td>0</td><td>1 - 2</td><td>≥ 3</td></tr>
+              <tr><td>Net Points</td><td>≥ +10</td><td>0 to +9</td><td>&lt; 0</td></tr>
             </tbody>
           </table>
         </div>
@@ -1029,9 +601,7 @@
         </div>
         <div class="card mt-1">
           <h3>Data & Local Storage Notice</h3>
-          <p>Local Storage is specific to one browser on one device. It does not offer cloud synchronisation or
-            multi-user security. It may be cleared by browser settings or the user. Do not store confidential real
-            student data.</p>
+          <p>Local Storage is specific to one browser on one device. It does not offer cloud synchronisation or multi-user security. It may be cleared by browser settings or the user. Do not store confidential real student data.</p>
         </div>
       </section>
     </main>
@@ -1127,10 +697,10 @@
           return false;
         }
       },
-
+       
       getStudents() { return this.getCollection(CONFIG.KEYS.STUDENTS); },
       saveStudents(students) { return this.saveCollection(CONFIG.KEYS.STUDENTS, students); },
-
+      
       getAttendance() { return this.getCollection(CONFIG.KEYS.ATTENDANCE); },
       saveAttendance(attendance) { return this.saveCollection(CONFIG.KEYS.ATTENDANCE, attendance); },
 
@@ -1181,7 +751,7 @@
       calculateStudentAttendance(studentId, attendanceRecords) {
         const records = attendanceRecords.filter(a => a.studentId === studentId);
         if (records.length === 0) return { total: 0, present: 0, absent: 0, leave: 0, pct: "N/A" };
-
+        
         let present = 0, absent = 0, leave = 0;
         records.forEach(r => {
           if (r.status === 'Present') present++;
@@ -1196,7 +766,7 @@
       calculateStudentTasks(studentId, taskRecords) {
         const tasks = taskRecords.filter(t => t.studentId === studentId);
         if (tasks.length === 0) return { total: 0, completed: 0, pending: 0, inProgress: 0, overdue: 0, pct: "N/A" };
-
+        
         const today = this.getTodayString();
         let completed = 0, pending = 0, inProgress = 0, overdue = 0;
 
@@ -1226,7 +796,7 @@
 
       getPerformanceRating(attPct, taskPct, overdueCount, netPoints) {
         const ratings = {};
-
+        
         if (attPct === "N/A") ratings.att = { color: 'none', label: 'N/A' };
         else if (attPct >= 90) ratings.att = { color: 'green', label: 'Green (≥90%)' };
         else if (attPct >= 75) ratings.att = { color: 'amber', label: 'Amber (75-89.9%)' };
@@ -1309,7 +879,7 @@
           StorageModule.saveAttendance(attendance);
           StorageModule.saveTasks(tasks);
           StorageModule.saveActivities(activities);
-
+          
           App.refreshAll();
         }
       }
@@ -1343,7 +913,7 @@
             e.preventDefault();
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
-
+            
             btn.classList.add('active');
             const pageId = btn.dataset.page;
             document.getElementById(`page-${pageId}`).classList.add('active');
